@@ -72,9 +72,8 @@ Now, you should be able to access the application at http://localhost:4000 (or w
 This project is a backend application, so you'll interact with it using API endpoints. Here are some examples:
 
 **User Registration**
-
 To register a new user, send a POST request to */api/v1/users/register* with the following data:
-
+```
 {
   "username": "test",
   "email": "test@email.com",
@@ -83,9 +82,9 @@ To register a new user, send a POST request to */api/v1/users/register* with the
   "avatar": "avatar.jpg",
   "coverImage": "coverImage.jpg",
 }
+```
 
 **User Login**
-
 To login, send a POST request to */api/v1/users/*login with the following data:
 
 ```
@@ -96,7 +95,6 @@ To login, send a POST request to */api/v1/users/*login with the following data:
 ```
 
 **User Logout**
-
 To logout, send a POST request to */api/v1/users/*logout .
 
 And Many more:
@@ -109,7 +107,7 @@ This project is open source and it is based on learning, this project is from "C
 Many new concept link aggregate, pipeline . This involves several stages, including matching, lookup, and many more projecting specific fields.
 
    *For Example:* 
- This above code :
+ In this above code :
    - $match-match stage
    - $lookup- lookupstageEmbedding Watch History Videos
    - inner Lookup Stage (Embedding Video Owners)
