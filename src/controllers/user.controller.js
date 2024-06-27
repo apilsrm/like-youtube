@@ -54,10 +54,13 @@ const registerUser = asyncHandler( async (req, res) => {
         throw new ApiError(400, "All fields are required")
     }
 
- //to check user exist or not //find one its find n return user jo paila vetinxa tei
+ //to check user exist or not 
+ // User.findOne()-Fetches a single document from the MongoDB collection that matches the provided query.
+ //find one its find n return user jo paila vetinxa tei
     const existedUser = await User.findOne({
         $or: [{ username }, { email }]
     }) // or method ho ..its return jo first math garxa user or email
+    //This is a MongoDB query operator. The $or operator is used to specify that the query should match documents where at least one of the given conditions is true
 
     if (existedUser) {
         throw new ApiError(409, "User with email or username already exists")
@@ -321,8 +324,7 @@ const updateUserAvatar = asyncHandler(async(req, res) => {
     if (!avatarLocalPath) {
         throw new ApiError(400, "Avatar file is missing")
     }
-
-    //TODO: delete old image - assignment
+//old image can de deleted
 
     const avatar = await uploadOnCloudinary(avatarLocalPath)
 
